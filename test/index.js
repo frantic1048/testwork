@@ -1,23 +1,57 @@
-import webdriver, { By, until } from 'selenium-webdriver';
-import { describe, it } from 'selenium-webdriver/testing';
-import chai, { expect } from 'chai';
-import chaiAsPromised from 'chai-as-promised';
+import { describe, after, it } from 'selenium-webdriver/testing';
+import webdriver, { Browser } from 'selenium-webdriver';
 
-chai.use(chaiAsPromised);
+/**
+ * where test runs
+ * unsupported target will be skipped
+ * @type {Array}
+ */
+const targets = [
+  ['Chrome', Browser.CHROME],
+  ['Firefox', Browser.FIREFOX],
+];
 
-function getDriver() {
-  return new webdriver.Builder()
-    .forBrowser('firefox')
-    .build();
+/**
+* Testing suites
+*/
+import simpleGet from './spec/simpleGet';
+
+/**
+ * what test runs
+ * @type {Array}
+ */
+const suites = [
+  simpleGet,
+];
+
+/**
+* build webdriver instance with specific driverName
+* @param  {string} driverName - one of webdriver.Browser
+* @return {webdriver.WebDriver} WebDriver client instance
+* @see http://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/index_exports_Browser.html
+* @see http://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/lib/webdriver_exports_WebDriver.html
+*/
+function getDriver(driverName) {
+  let driver;
+  try {
+    driver = new webdriver.Builder()
+      .forBrowser(driverName)
+      .build();
+  } finally {
+    return driver;
+  }
 }
 
-describe('Hi', () => {
-  it('Home', () => {
-    const driver = getDriver();
-
-    driver.get('https://krita.org/')
-      .then(() => Promise.resolve(driver.getTitle()))
-      .then(title => expect(title).to.equal('Krita | Digital Painting. Creative Freedom.'))
-      .then(() => driver.quit());
+for (const [target, browser] of targets) {
+  describe(`${target}`, () => {
+    const driver = getDriver(browser);
+    it('setup', (done) => {
+      if (!driver) done(new Error(`no environment for ${target}`));
+      else done();
+    });
+    if (driver) {
+      suites.forEach(s => s.call(this, driver));
+      after(() => driver.quit());
+    }
   });
-});
+}
