@@ -1,5 +1,5 @@
-import { describe, after, it } from 'selenium-webdriver/testing';
 import webdriver, { Browser } from 'selenium-webdriver';
+import { describe, after, it } from 'selenium-webdriver/testing';
 
 /**
  * where test runs
@@ -9,6 +9,9 @@ import webdriver, { Browser } from 'selenium-webdriver';
 const targets = [
   ['Chrome', Browser.CHROME],
   ['Firefox', Browser.FIREFOX],
+  ['IE', Browser.IE],
+  ['Edge', Browser.EDGE],
+  ['Safari', Browser.SAFARI],
 ];
 
 /**

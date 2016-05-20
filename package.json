@@ -18,6 +18,8 @@
     }
   },
   "scripts": {
+    "preinstallDep": "npm install --global npminstall",
+    "installDep": "npminstall --china --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver",
     "lint": "./node_modules/.bin/eslint \"test/**\" ",
     "lint:fix": "./node_modules/.bin/eslint --fix \"test/**\" && npm run lint",
     "test": "./node_modules/.bin/mocha --timeout 60000 --compilers js:babel-register test/index.js"
