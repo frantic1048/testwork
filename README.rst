@@ -98,7 +98,7 @@ Chrome/ChromeDriver
   它会在安装项目依赖的时候自动安装。
 
 Safari/SafariDriver
-  下载 ``SafariDriver.safariextz <http://selenium-release.storage.googleapis.com/2.48/SafariDriver.safariextz>``_ 并安装。
+  下载 `SafariDriver.safariextz <http://selenium-release.storage.googleapis.com/2.48/SafariDriver.safariextz>`_ 并安装。
   随后启动 Safari，在其 设置 -> 扩展 选项卡中启用 ``WebDriver``。
 
 安装项目依赖
