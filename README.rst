@@ -2,15 +2,14 @@
 Testwork
 ===========
 
+.. contents::
+  :depth: 2
+  :local:
+  :backlinks: none
+
 -----------
 部署
 -----------
-
-
-- `Linux`_
-- `OS X`_
-- `Windows`_
-
 
 Linux
 ==============
@@ -22,13 +21,13 @@ Linux
 
 Arch Linux
 
-.. sourcecode :: bash
+.. code :: bash
 
   pacman -S nodejs npm
 
 Ubuntu 与基于 Debian 的发行版
 
-.. sourcecode :: bash
+.. code :: bash
 
   curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
   sudo apt-get install -y nodejs
@@ -55,7 +54,7 @@ Chrome/chromedriver
 
 克隆该仓库代码到本地，使用任意图形化 git 前端，或者直接使用 ``git``，这里以后者操作为例：
 
-.. sourcecode :: bash
+.. code :: bash
 
   # 进入你想要存放此仓库代码的目录
   # e.g. cd ~/my-github-repos
@@ -76,7 +75,7 @@ OS X
 
 可以通过 Homebrew 安装：
 
-.. sourcecode ::
+.. code ::
 
   brew install node
 
@@ -89,10 +88,8 @@ OS X
 
 OS X 下需要测试的浏览器与对应的 Webdriver 组件有：
 
-.. _firefox_download: https://www.mozilla.org/en-US/firefox/all/
-
 Firefox
-  前往 `Firefox 官网下载页面 <firefox_download_>`_ 下载并安装。
+  前往 `Firefox 官网下载页面 <https://www.mozilla.org/en-US/firefox/all/>`_ 下载并安装。
 
 Chrome/ChromeDriver
   它会在安装项目依赖的时候自动安装。
@@ -106,7 +103,7 @@ Safari/SafariDriver
 
 克隆该仓库代码到本地，使用任意图形化 git 前端，或者直接使用 ``git``，这里以后者操作为例：
 
-.. sourcecode :: bash
+.. code :: bash
 
   # 进入你想要存放此仓库代码的目录
   # e.g. cd ~/my-github-repos
@@ -125,9 +122,7 @@ Windows
 安装 Node.js
 --------------
 
-.. _nodejs_win_download: https://nodejs.org/en/download/current/
-
-前往 `Node.js 官网下载页面 <nodejs_win_download_>`_，选择与系统适配的（32-bit 或者 64-bit）版本即可。推荐使用 ``.msi`` 安装包。
+前往 `Node.js 官网下载页面 <https://nodejs.org/en/download/current/>`_，选择与系统适配的（32-bit 或者 64-bit）版本即可。推荐使用 ``.msi`` 安装包。
 
 安装 Webdriver 组件
 --------------------
@@ -135,7 +130,7 @@ Windows
 Windows 下需要测试的浏览器与对应的 Webdriver 组件有：
 
 Firefox
-  前往 `Firefox 官网下载页面 <firefox_download_>`_ 下载并安装。
+  前往 `Firefox 官网下载页面 <https://www.mozilla.org/en-US/firefox/all/>`_ 下载并安装。
 
 Chrome/ChromeDriver
   它会在安装项目依赖的时候自动安装。
@@ -152,7 +147,7 @@ Edge/MicrosoftWebDriver（Windows 10）
 
 克隆该仓库代码到本地，使用任意图形化 git 前端，或者直接使用 ``git``，这里以后者操作为例：
 
-.. sourcecode :: bash
+.. code :: bash
 
   # 进入你想要存放此仓库代码的目录
   # e.g. cd ~/my-github-repos
