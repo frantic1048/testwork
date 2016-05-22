@@ -6,13 +6,23 @@ import { describe, after, it } from 'selenium-webdriver/testing';
  * unsupported target will be skipped
  * @type {Array}
  */
-const targets = [
-  ['Chrome', Browser.CHROME],
-  ['Firefox', Browser.FIREFOX],
-  ['IE', Browser.IE],
-  ['Edge', Browser.EDGE],
-  ['Safari', Browser.SAFARI],
-];
+const targets = {
+  linux: [ // Linux
+    ['Chrome', Browser.CHROME],
+    ['Firefox', Browser.FIREFOX],
+  ],
+  darwin: [ // OS X
+    ['Chrome', Browser.CHROME],
+    ['Firefox', Browser.FIREFOX],
+    ['Safari', Browser.SAFARI],
+  ],
+  win32: [ // Windows
+    ['Chrome', Browser.CHROME],
+    ['Firefox', Browser.FIREFOX],
+    ['IE', Browser.IE],
+    ['Edge', Browser.EDGE],
+  ],
+};
 
 /**
 * Testing suites
@@ -45,8 +55,10 @@ function getDriver(driverName) {
   }
 }
 
-for (const [target, browser] of targets) {
-  describe(`${target}`, () => {
+const platform = process.platform;
+
+for (const [target, browser] of targets[platform]) {
+  describe(`${platform}.${target}`, () => {
     const driver = getDriver(browser);
     it('setup', (done) => {
       if (!driver) done(new Error(`no environment for ${target}`));
