@@ -50,9 +50,10 @@ function getDriver(driverName) {
     driver = new webdriver.Builder()
       .forBrowser(driverName)
       .build();
-  } finally {
-    return driver;
+  } catch (ex) {
+    driver = null;
   }
+  return driver;
 }
 
 const platform = process.platform;
