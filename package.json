@@ -11,12 +11,6 @@
       "es2015"
     ]
   },
-  "eslintConfig": {
-    "extends": "airbnb",
-    "env": {
-      "mocha": true
-    }
-  },
   "scripts": {
     "preinstallDep": "npm install --global npminstall",
     "installDep": "npminstall --china --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver",
