@@ -4,17 +4,11 @@ import chaiAsPromised from 'chai-as-promised';
 
 chai.use(chaiAsPromised);
 
-export default (driver) =>
+export default (driver, baseURL) =>
 describe('Simple GET', () => {
-  it('Krita', (done) => {
-    driver.get('https://krita.org/');
-    expect(driver.getTitle()).to.eventually.equal('Krita | Digital Painting. Creative Freedom.')
-      .and.notify(done);
-  });
-
-  it('Github', (done) => {
-    driver.get('https://github.com/');
-    expect(driver.getTitle()).to.eventually.equal('How people build software · GitHub')
+  it('base', (done) => {
+    driver.get(baseURL);
+    expect(driver.getTitle()).to.eventually.equal('人力资源管理系统')
       .and.notify(done);
   });
 });

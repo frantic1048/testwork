@@ -1,5 +1,6 @@
 import webdriver, { Browser } from 'selenium-webdriver';
 import { describe, after, it } from 'selenium-webdriver/testing';
+import { baseURL } from '../test.config';
 
 /**
  * where test runs
@@ -66,7 +67,7 @@ for (const [target, browser] of targets[platform]) {
       else done();
     });
     if (driver) {
-      suites.forEach(s => s.call(this, driver));
+      suites.forEach(s => s.call(this, driver, baseURL));
       after(() => driver.quit());
     }
   });
