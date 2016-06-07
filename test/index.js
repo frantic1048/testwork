@@ -1,10 +1,10 @@
 import webdriver, { Browser } from 'selenium-webdriver';
 import { describe, after, it } from 'selenium-webdriver/testing';
-import { baseURL } from '../test.config';
+
+import { baseURL } from '../testConfig'; // eslint-disable-line import/no-unresolved
 
 /**
  * where test runs
- * unsupported target will be skipped
  * @type {Array}
  */
 const targets = {

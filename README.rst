@@ -70,6 +70,11 @@ Chrome/chromedriver
   # 安装项目依赖，此操作需要大约三分钟
   npm run installDep
 
+编辑项目配置
+------------
+
+复制项目根目录的 ``testConfig.js.example`` 并命名为 ``testConfig.js`` ，在其中填写待测试的网站首页路径。在配置文件中已经预留了一个地址，在没有特别通知的时候可以直接使用。
+
 至此项目就绪。可以执行 ``npm test`` 检查测试是否能够正常启动。
 
 OS X
@@ -119,6 +124,11 @@ Safari/SafariDriver
   # 安装项目依赖，此操作需要大约三分钟
   npm run installDep
 
+编辑项目配置
+------------
+
+复制项目根目录的 ``testConfig.js.example`` 并命名为 ``testConfig.js`` ，在其中填写待测试的网站首页路径。在配置文件中已经预留了一个地址，在没有特别通知的时候可以直接使用。
+
 至此项目就绪。可以执行 ``npm test`` 检查测试是否能够正常启动。
 
 Windows
@@ -163,6 +173,11 @@ Edge/MicrosoftWebDriver（Windows 10）
   # 安装项目依赖，此操作需要大约三分钟
   npm run installDep
 
+编辑项目配置
+------------
+
+复制项目根目录的 ``testConfig.js.example`` 并命名为 ``testConfig.js`` ，在其中填写待测试的网站首页路径。在配置文件中已经预留了一个地址，在没有特别通知的时候可以直接使用。
+
 至此项目就绪。可以执行 ``npm test`` 检查测试是否能够正常启动。
 
 -----------
@@ -190,6 +205,8 @@ Edge/MicrosoftWebDriver（Windows 10）
   ├── node_modules          // [忽略] npm 依赖目录
   ├── package.json          // 目录
   ├── README.rst            // 你正在阅读的文件
+  ├── testConfig.js.example // 项目配置模板
+  ├── testConfig.js         // 项目配置
   └── test                  // 测试程序目录
       ├── index.js          // 测试程序入口
       └── spec              // 测试用例目录
