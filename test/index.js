@@ -29,6 +29,7 @@ const targets = {
 * Testing suites
 */
 import simpleGet from './spec/simpleGet';
+import loginLogout from './spec/loginLogout';
 
 /**
  * what test runs
@@ -36,6 +37,7 @@ import simpleGet from './spec/simpleGet';
  */
 const suites = [
   simpleGet,
+  loginLogout,
 ];
 
 /**
