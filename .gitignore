@@ -37,3 +37,6 @@ node_modules
 
 # config
 /testConfig.js
+
+# idea
+.idea
