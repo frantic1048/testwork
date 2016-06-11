@@ -151,11 +151,30 @@ Chrome/ChromeDriver
   它会在安装项目依赖的时候自动安装。
 
 IE/IEDriverServer
-  下载 `IEDriverServer_Win32_2.53.1.zip <http://selenium-release.storage.googleapis.com/2.53/IEDriverServer_Win32_2.53.1.zip>`_ 解压并安装。
+  下载 `IEDriverServer_Win32_2.53.1.zip <http://selenium-release.storage.googleapis.com/2.53/IEDriverServer_Win32_2.53.1.zip>`_ 解压，并将里面的可执行文件所在目录设置在环境变量 PATH 中。
+
+  在 IE 的设置，安全选项卡中，关闭每个域的“保护模式”。
+
+  如果是 IE 10 及以上版本，另需要在设置的高级选项卡中关闭“增强的保护模式”功能。
+
+  确保 IE 缩放处于 100% 的状态。
+
+  对于 IE 11 ，在注册表编辑器中，找到键 ``HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BFCACHE`` ， 对于 64 位 Windows 则是 ``HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BFCACHE`` ，如果没有 ``FEATURE_BFCACHE`` 这个键，则需要手动创建它，然后在其中创建一个 DWROD 值，命名为 ``iexplore.exe`` ，值设置为 0。
+
+      细节解释见： `InternetExplorerDriver#required-configuration <https://github.com/SeleniumHQ/selenium/wiki/InternetExplorerDriver#required-configuration>`_
 
 Edge/MicrosoftWebDriver（Windows 10）
-  下载 `MicrosoftWebDriver.msi <http://go.microsoft.com/fwlink/?LinkId=619687>`_ 并安装之。
+  首先确认你的 Windows 10 版本：
 
+  - Windows 10 Build 10240：下载 `MicrosoftWebDriver 1 <https://www.microsoft.com/en-us/download/details.aspx?id=48212>`_ 并安装。
+  - Windows 10 Fall 2015 Update：下载 `MicrosoftWebDriver 2 <https://www.microsoft.com/en-us/download/details.aspx?id=49962>`_ 并安装。
+  - Windows 10 最新 **预览版** ：下载 `MicrosoftWebDriver 3 <https://www.microsoft.com/en-us/download/details.aspx?id=48740>`_ 并安装
+
+      详细信息见： `WebDriver - Microsoft Edge Development <https://developer.microsoft.com/en-us/microsoft-edge/platform/documentation/dev-guide/tools/webdriver/>`_
+
+  随后，将 MicrosoftWebDriver 的安装目录添加进环境变量 PATH 中。
+
+对于修改注册表和环境变量等操作，请重启一下系统保证设置已经生效。
 
 安装项目依赖
 ------------
