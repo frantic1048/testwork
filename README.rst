@@ -150,6 +150,8 @@ Firefox
 Chrome/ChromeDriver
   它会在安装项目依赖的时候自动安装。
 
+  安装依赖之后，将此项目根目录的 ``node_modules/.bin/`` 路径加入环境变量 PATH 中。
+
 IE/IEDriverServer
   下载 `IEDriverServer_Win32_2.53.1.zip <http://selenium-release.storage.googleapis.com/2.53/IEDriverServer_Win32_2.53.1.zip>`_ 解压，并将里面的可执行文件所在目录设置在环境变量 PATH 中。
 
@@ -159,7 +161,7 @@ IE/IEDriverServer
 
   确保 IE 缩放处于 100% 的状态。
 
-  对于 IE 11 ，在注册表编辑器中，找到键 ``HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BFCACHE`` ， 对于 64 位 Windows 则是 ``HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BFCACHE`` ，如果没有 ``FEATURE_BFCACHE`` 这个键，则需要手动创建它，然后在其中创建一个 DWROD 值，命名为 ``iexplore.exe`` ，值设置为 0。
+  对于 IE 11 ，在注册表编辑器中，找到键 ``HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BFCACHE`` ， 对于 64 位 Windows 则是 ``HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BFCACHE`` ，如果没有 ``FEATURE_BFCACHE`` 这个键，则需要手动创建它，然后在其中创建一个 DWORD 值，命名为 ``iexplore.exe`` ，值设置为 0。
 
       细节解释见： `InternetExplorerDriver#required-configuration <https://github.com/SeleniumHQ/selenium/wiki/InternetExplorerDriver#required-configuration>`_
 
