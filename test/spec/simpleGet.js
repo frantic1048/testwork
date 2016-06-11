@@ -7,7 +7,7 @@ chai.use(chaiAsPromised);
 export default (driver, baseURL) =>
 describe('Simple GET', () => {
   it('base', (done) => {
-    driver.get(baseURL);
+    driver.get(`${baseURL}/`);
     expect(driver.getTitle()).to.eventually.equal('人力资源管理系统')
       .and.notify(done);
   });
