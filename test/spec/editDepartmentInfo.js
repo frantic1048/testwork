@@ -6,8 +6,13 @@ import { By, until } from 'selenium-webdriver';
 chai.use(chaiAsPromised);
 
 export default (driver, baseURL) =>
+<<<<<<< 9302e24c85ddb8b7d31196adad9bc67da8c135c4
 describe('editDepartmentInfo', () => {
   it('editDepartmentInfo', (done) => {
+=======
+describe('checkDepartmentInfo', () => {
+  it('checkDepartmentInfo', (done) => {
+>>>>>>> 【提交测试js】查看部门信息、编辑部门信息、查询月报数据
     // open index
     driver.get(`${baseURL}/`);
     // expect(driver.getTitle()).to.eventually.equal('人力资源管理系统');
