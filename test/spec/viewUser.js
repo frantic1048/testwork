@@ -5,53 +5,32 @@ import { By, until } from 'selenium-webdriver';
 
 chai.use(chaiAsPromised);
 
-export default ( driver, baseURL ) =>
+export default (driver, baseURL) =>
 describe('View - User', () => {
-	//字模块
-	it ('View - User', (done) => {
+  it('View - User', (done) => {
+    driver.get(`${baseURL}/`);
+    expect(driver.getTitle()).to.eventually.equal('人力资源管理系统');
+    driver.findElement(By.css('input[name="name"]')).sendKeys('admin');
+    driver.findElement(By.css('input[name="password"]')).sendKeys('admin');
+    driver.findElement(By.css('input[type="submit"]')).click();
+    expect(driver.getTitle()).to.eventually.equal('企业信息管理系统');
+    expect(driver.getCurrentUrl())
+        .to.eventually.equal(`${baseURL}/ad_home.php`)
+        .and.notify(done);
 
-		//登录
-		// open index
-	    driver.get(`${baseURL}/`);
-	    expect(driver.getTitle()).to.eventually.equal('人力资源管理系统');
-	    // input username
-	    driver.findElement(By.css('input[name="name"]')).sendKeys('admin');
-	    // input password
-	    driver.findElement(By.css('input[name="password"]')).sendKeys('admin');
-	    // press login button
-	    driver.findElement(By.css('input[type="submit"]')).click();
-	    // check if we are in logged page
-	    expect(driver.getTitle()).to.eventually.equal('企业信息管理系统');
-	    expect(driver.getCurrentUrl())
-	      .to.eventually.equal(`${baseURL}/ad_home.php`)
-	      .and.notify(done);
-//此处进入主界面
+    driver.findElement(By.css('#content > div.container-fluid' +
+      ' > div > ul > li:nth-child(8) > a')).click();
+    expect(driver.getTitle()).to.eventually.equal('企业信息管理系统');
+    expect(driver.getCurrentUrl())
+        .to.eventually.equal(`${baseURL}/ad_usermanager.php`)
+        .and.notify(done);
 
-//进入通知界面
-	    //点击用户管理
-	    driver.findElement(By.css('#content > div.container-fluid > div > ul > li:nth-child(8) > a')).click();
-	    //检查位置（ad_usermanager.php）
-	    expect(driver.getTitle()).to.eventually.equal('企业信息管理系统');
-	    expect(driver.getCurrentUrl())
-	      .to.eventually.equal(`${baseURL}/ad_usermanager.php`)
-	      .and.notify(done);
-	    
-
-
-	    //登出
-	    // click the logout button
-	    driver.findElement(By.css('#user-nav>ul>li:nth-child(2) a[href="/anli/logout.php"]')).click();
-	    // wait alert shows
-	    driver.wait(until.alertIsPresent());
-	    // siwtch to alert window
-	    // and accept it
-	    driver.switchTo().alert().accept();
-	    // switch bach to main window
-	    driver.switchTo().defaultContent();
-	    // check if we are back to login page
-	    expect(driver.getCurrentUrl())
-	      .to.eventually.equal(`${baseURL}/login_page.php`)
-	      .and.notify(done);
-
-	});
+    driver.findElement(By.css('#user-nav>ul>li:nth-child(2) a[href="/anli/logout.php"]')).click();
+    driver.wait(until.alertIsPresent());
+    driver.switchTo().alert().accept();
+    driver.switchTo().defaultContent();
+    expect(driver.getCurrentUrl())
+        .to.eventually.equal(`${baseURL}/login_page.php`)
+        .and.notify(done);
+  });
 });
