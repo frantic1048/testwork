@@ -41,12 +41,14 @@ import editUser from './spec/editUser';// by wjh
 import deleteUser from './spec/deleteUser';// by wjh
 import viewMonth from './spec/viewMonth';// by wjh
 import addMonth from './spec/addMonth';// by wjh
+import homeList from './spec/homeList';
 
 /**
  * what test runs
  * @type {Array}
  */
 const suites = [
+<<<<<<< c9660e628be45b701c0d6984bc15ee314ed3da00
   simpleGet,
   loginLogout,
   reportForm,
@@ -59,6 +61,11 @@ const suites = [
   deleteUser, // by wjh
   viewMonth, // by wjh
   addMonth, // by wjh
+=======
+  // simpleGet,
+  // loginLogout,
+  homeList,
+>>>>>>> test homeList
 ];
 
 /**
