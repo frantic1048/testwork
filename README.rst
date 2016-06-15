@@ -297,14 +297,11 @@ Edge/MicrosoftWebDriver（Windows 10）
 .. code:: js
 
   import { it, describe } from 'selenium-webdriver/testing';
-  import chai, { expect } from 'chai';
-  import chaiAsPromised from 'chai-as-promised';
-
-  chai.use(chaiAsPromised);
+  import { expect } from 'chai';
 
   export default (driver, baseURL) =>
   describe('用例描述', () => {
-    it('子用例描述', (done) => {
+    it('子用例描述', async () => {
       /*
        * 在这里编写测试用例内容
        */
@@ -312,7 +309,7 @@ Edge/MicrosoftWebDriver（Windows 10）
 
     // 如果要添加更多的子用例
     // 像这样增加 it() 块即可
-    it('子用例描述', (done) => {
+    it('子用例描述', async () => {
       /*
        * 在这里编写测试用例内容
        */
@@ -349,20 +346,27 @@ Edge/MicrosoftWebDriver（Windows 10）
 
     driver.get('http://girigiri.love/');
 
-  关于更多的操作的表达，参见：`WebDriver - class WebDriver`_
+  **注意** ： driver 提供的接口都是异步执行的，也就是说， ``driver.get(..)`` 后面的语句不会等到 .get() 打开目标地址之后才执行。
 
-.. _`WebDriver - class WebDriver`: http://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/lib/webdriver_exports_WebDriver.html
-
-``done``
-
-  这是测试框架 Mocha 为每个用例提供的一个 **函数**，调用它会立即结束当前用例，不带参数调用将令当前用例通过，如果传入一个 Error 调用它将令当前用例失败。在异步的测试代码中需要用它来结束用例。例如：
+  为了"等待"每个 driver 的操作完成之后再执行后面的语句，我们应该在每个 driver 前面加上 ``await`` 关键字：
 
   .. code:: js
 
-    // 网页标题应该是'人力资源管理系统'
-    expect(driver.getTitle()).to.eventually.equal('人力资源管理系统')
-      .and.notify(done);
+    await driver.get('http://girigiri.love/');
+    console.log('we are in girigiri.love now~');
 
-  这里的 ``driver.getTitle()`` 是一个异步的操作，它返回一个 Promise_ 而不是执行结果，这意味着在它后面的语句不一定是在它执行完之后才执行的。 ``expect`` 会处理它（通过增加一个 ``.eventually`` 修饰），并将 ``getTitle()`` 真正的执行结果带入后面的断言（``.equal``），在最后的 ``.and.notify()`` 表示断言执行完之后需要调用的函数，这时将 ``done`` 放到 ``notify()`` 里面，这样用例就会在断言执行完之后结束。如果没有这样做的话，测试框架会不知道用例什么时候结束，将导致用例超时，而直接写一句 ``done();`` 在 ``expect`` 那句后面的话，会导致用例在断言还没执行的时候就结束，这都是不期望的事情。
+  对于有返回值的接口，也是同样的加上 ``await`` 即可：
 
-.. _Promise: https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise
+  .. code:: js
+
+    const title = await driver.getTitle();
+    console.log(`page title is ${title}`);
+
+    // 像这样作为函数参数也是可以的，
+    // 只要调用前加上 await 关键字即可
+    expect(await driver.getTitle())
+      .to.equal('ギリギリ爱 - GiriGiriLove');
+
+  关于 WebDriver 更多的操作的表达，参见：`WebDriver - class WebDriver`_
+
+.. _`WebDriver - class WebDriver`: http://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/lib/webdriver_exports_WebDriver.html
