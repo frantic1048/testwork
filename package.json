@@ -8,7 +8,8 @@
   },
   "babel": {
     "presets": [
-      "es2015"
+      "es2015",
+      "stage-0"
     ]
   },
   "scripts": {
@@ -16,7 +17,7 @@
     "installDep": "npminstall --china --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver",
     "lint": "./node_modules/.bin/eslint \"test/**\" ",
     "lint:fix": "./node_modules/.bin/eslint --fix \"test/**\" && npm run lint",
-    "test": "./node_modules/.bin/mocha --timeout 60000 --compilers js:babel-register test/index.js"
+    "test": "./node_modules/.bin/mocha --timeout 60000 --compilers js:babel-register --require babel-polyfill test/index.js"
   },
   "repository": {
     "type": "git",
@@ -29,7 +30,10 @@
   },
   "homepage": "https://github.com/frantic1048/testwork#readme",
   "devDependencies": {
+    "babel-eslint": "^6.0.4",
+    "babel-polyfill": "^6.9.1",
     "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.9.0",
     "chai": "^3.5.0",
     "chai-as-promised": "^5.3.0",
