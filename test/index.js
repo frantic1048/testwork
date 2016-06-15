@@ -32,15 +32,15 @@ import simpleGet from './spec/simpleGet';
 import loginLogout from './spec/loginLogout';
 
 
-import viewInform from './spec/viewInform';//by wjh
-import addInform from './spec/addInform';//by wjh
-import deleteInform from './spec/deleteInform';//by wjh
-import viewUser from './spec/viewUser';//by wjh
-import addUser from './spec/addUser';//by wjh
-import editUser from './spec/editUser';//by wjh
-import deleteUser from './spec/deleteUser';//by wjh
-import viewMonth from './spec/viewMonth'//by wjh
-import addMonth from './spec/addMonth'//by wjh
+import viewInform from './spec/viewInform';// by wjh
+import addInform from './spec/addInform';// by wjh
+import deleteInform from './spec/deleteInform';// by wjh
+import viewUser from './spec/viewUser';// by wjh
+import addUser from './spec/addUser';// by wjh
+import editUser from './spec/editUser';// by wjh
+import deleteUser from './spec/deleteUser';// by wjh
+import viewMonth from './spec/viewMonth';// by wjh
+import addMonth from './spec/addMonth';// by wjh
 
 /**
  * what test runs
@@ -49,16 +49,15 @@ import addMonth from './spec/addMonth'//by wjh
 const suites = [
   simpleGet,
   loginLogout,
-
- // viewInform,//by wjh
- // addInform,//by wjh
- // deleteInform,//by wjh
- //viewUser,//by wjh
- //addUser,//by wjh
- //editUser,//by wjh
- //deleteUser,//by wjh
- //viewMonth,//by wjh
- //addMonth,//by wjh
+  viewInform, // by wjh
+  addInform, // by wjh
+  deleteInform, // by wjh
+  viewUser, // by wjh
+  addUser, // by wjh
+  editUser, // by wjh
+  deleteUser, // by wjh
+  viewMonth, // by wjh
+  addMonth, //by wjh
 
 ];
 
