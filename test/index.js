@@ -29,6 +29,7 @@ const targets = {
 * Testing suites
 */
 import simpleGet from './spec/simpleGet';
+<<<<<<< 04442c2d2c6f2e40eb8906ec57d1094d07c2f21b
 import loginLogout from './spec/loginLogout';
 import reportForm from './spec/reportForm';
 
@@ -42,12 +43,18 @@ import deleteUser from './spec/deleteUser';// by wjh
 import viewMonth from './spec/viewMonth';// by wjh
 import addMonth from './spec/addMonth';// by wjh
 import homeList from './spec/homeList';
+=======
+// import loginLogout from './spec/loginLogout';
+// import homeListAdmin from './spec/homeListAdmin';
+// import homeListDepartment from './spec/homeListDepartment';
+>>>>>>> 完成2.3.1
 
 /**
  * what test runs
  * @type {Array}
  */
 const suites = [
+<<<<<<< 04442c2d2c6f2e40eb8906ec57d1094d07c2f21b
 <<<<<<< c9660e628be45b701c0d6984bc15ee314ed3da00
   simpleGet,
   loginLogout,
@@ -66,6 +73,12 @@ const suites = [
   // loginLogout,
   homeList,
 >>>>>>> test homeList
+=======
+  simpleGet,
+  // loginLogout,
+  // homeListAdmin,
+  // homeListDepartment,
+>>>>>>> 完成2.3.1
 ];
 
 /**
