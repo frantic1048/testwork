@@ -6,8 +6,8 @@ import { By, until } from 'selenium-webdriver';
 chai.use(chaiAsPromised);
 
 export default (driver, baseURL) =>
-describe('checkDepartmentInfo', () => {
-  it('checkDepartmentInfo', (done) => {
+describe('searchMonthData', () => {
+  it('searchMonthData', (done) => {
     // open index
     driver.get(`${baseURL}/`);
     // expect(driver.getTitle()).to.eventually.equal('人力资源管理系统');
