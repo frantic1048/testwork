@@ -6,8 +6,8 @@ import { By, until } from 'selenium-webdriver';
 chai.use(chaiAsPromised);
 
 export default (driver, baseURL) =>
-describe('editDepartmentInfo', () => {
-  it('editDepartmentInfo', (done) => {
+describe('fillMonthPersonnel', () => {
+  it('fillMonthPersonnel', (done) => {
     // open index
     driver.get(`${baseURL}/`);
     // expect(driver.getTitle()).to.eventually.equal('人力资源管理系统');
@@ -21,26 +21,33 @@ describe('editDepartmentInfo', () => {
     // press login button
     driver.findElement(By.css('input[type="submit"]')).click();
 
-    driver.findElement(By.css('#sidebar > ul > li:nth-child(2) > a')).click();
+    //点击月表填报
+    driver.findElement(By.css('#sidebar > ul > li.submenu.open > a')).click();
+
+    //点击人事汇报
+    driver.findElement(By.css('#sidebar > ul > li.submenu.open > ul > li:nth-child(2) > a')).click();
+
+    driver.findElement(By.css('input[name="staff_number"]')).sendKeys('3');
+    driver.findElement(By.css('input[type="submit"]')).click();
+
+    //查看是否成功
+    driver.findElement(By.css('#sidebar > ul > li:nth-child(5) > a > span')).click();
 
     const elem0 = driver.findElement(By.css('#breadcrumb > a.current'));
     expect(elem0.getText())
-      .to.eventually.equal('部门信息')
+      .to.eventually.equal('月报查询')
       .and.notify(done);
 
-    //click edit button
-    driver.findElement(By.css('#content > div.container-fluid > div > div > a > button')).click();
+    //click search button
+    driver.findElement(By.css('#content > div.container-fluid > div > div >'
+      +' div > div.widget-content.nopadding > table > tbody >'
+      +' tr:nth-child(1) > td:nth-child(3)')).click();
 
-    driver.findElement(By.css('input[name="department_name"]')).sendKeys('财务部修改');
-
-    driver.findElement(By.css('#editForm > div.form-actions > button')).click();
-
-    //check edit
-    const elem1 = driver.findElement(By.css('#content > div.container-fluid '
-      +' > div > div > div > div.widget-content > table:nth-child(3) '
-      +' > tbody > tr:nth-child(1) > td:nth-child(2)'));
+    //check search
+    const elem1 = driver.findElement(By.css('#content > div.container-fluid >'
+      +' div > div.span8 > div > div.widget-content > table > tbody > tr > td:nth-child(1)'));
     expect(elem1.getText())
-      .to.eventually.equal('财务部修改')
+      .to.eventually.equal('3')
       .and.notify(done);
 
     // we are logged in
