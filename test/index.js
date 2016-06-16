@@ -13,9 +13,9 @@ const targets = {
     ['Firefox', Browser.FIREFOX],
   ],
   darwin: [ // OS X
-    ['Chrome', Browser.CHROME],
+    // ['Chrome', Browser.CHROME],
     ['Firefox', Browser.FIREFOX],
-    ['Safari', Browser.SAFARI],
+    // ['Safari', Browser.SAFARI],
   ],
   win32: [ // Windows
     ['Chrome', Browser.CHROME],
@@ -28,6 +28,7 @@ const targets = {
 /**
 * Testing suites
 */
+<<<<<<< 9c770fe35391dba2c17aa4b778f2adb3e8727a5f
 import simpleGet from './spec/simpleGet';
 import loginLogout from './spec/loginLogout';
 import reportForm from './spec/reportForm';
@@ -48,12 +49,21 @@ import checkDepartmentRecord from './spec/checkDepartmentRecord';
 import applyActivity from './spec/applyActivity';
 import managePerson from './spec/managePerson';
 
+=======
+// import simpleGet from './spec/simpleGet';
+// import loginLogout from './spec/loginLogout';
+// import checkDepartmentInfo from './spec/checkDepartmentInfo';
+// import searchMonthData from './spec/searchMonthData';
+// import fillMonthPayout from './spec/fillMonthPayout';
+// import fillMonthPersonnel from './spec/fillMonthPersonnel';
+>>>>>>> fix bugs
 
 /**
  * what test runs
  * @type {Array}
  */
 const suites = [
+<<<<<<< 9c770fe35391dba2c17aa4b778f2adb3e8727a5f
   simpleGet,
   loginLogout,
   reportForm,
@@ -71,6 +81,14 @@ const suites = [
   checkDepartmentRecord,
   managePerson,
   applyActivity,
+=======
+  // simpleGet,
+  // loginLogout,
+  // checkDepartmentInfo,
+  // searchMonthData,
+  // fillMonthPayout,
+  // fillMonthPersonnel,
+>>>>>>> fix bugs
 ];
 
 /**
