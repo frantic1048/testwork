@@ -3,8 +3,8 @@ import { expect } from 'chai';
 import { By, until } from 'selenium-webdriver';
 
 export default (driver, baseURL) =>
-describe('Check Department Record', () => {
-  it('Check Department Record', async () => {
+describe('Apply Activity', () => {
+  it('Apply Activity', async () => {
     // open index
     // use await before every driver action,
     // to wait until it's asynchronous action done,
@@ -17,43 +17,38 @@ describe('Check Department Record', () => {
     expect(await driver.getTitle()).to.equal('人力资源管理系统');
 
     // input username
-    await driver.findElement(By.css('input[name="name"]')).sendKeys('admin');
+    await driver.findElement(By.css('input[name="name"]')).sendKeys('test');
 
     // input password
-    await driver.findElement(By.css('input[name="password"]')).sendKeys('admin');
+    await driver.findElement(By.css('input[name="password"]')).sendKeys('test');
 
     // press login button
     await driver.findElement(By.css('input[type="submit"]')).click();
 
     // check if we are in logged page
     expect(await driver.getCurrentUrl())
-      .to.equal(`${baseURL}/ad_home.php`);
+      .to.equal(`${baseURL}/user_home.php`);
 
-    // 进入备案管理
-    await driver.findElement(By.css('#sidebar > ul > li:nth-child(2) > a')).click();
+    // 进入活动申报
+    await driver.findElement(By.css('#sidebar > ul > li:nth-child(6) > a')).click();
 
-    // 备案详情页
+    // 填写活动申请
     await driver.findElement(By.css('#content > div.container-fluid >'
-        + ' div > div > div > div.widget-content > table > tbody >'
-        + ' tr:nth-child(1) > td.taskOptions > a:nth-child(1) > button')).click();
-    const elem0 = driver.findElement(By.css('#content > div.container-fluid >'
-        + ' div > div > div > div.widget-title > h5'));
-    expect(await elem0.getText()).to.equal('部门信息');
-    // 返回
-    await driver.findElement(By.css('#content > div.container-fluid >'
-        + ' div > div > a > button')).click();
-    // 导出Excel
-    await driver.findElement(By.css('#content > div.container-fluid >'
-        + ' div > div > div > div.widget-content > a > button')).click();
+      + ' div > div > div > div.widget-title > a')).click();
+    const elem0 = driver.findElement(By.css('#breadcrumb > a.current'));
+    expect(await elem0.getText()).to.equal('活动申请填写');
 
-    // wait alert shows
+    // 填写内容
+    await driver.findElement(By.css('input[name="activity_name"]')).sendKeys('测试活动');
+    await driver.findElement(By.css('input[name="activity_fund"]')).sendKeys('999');
+    await driver.findElement(By.css('input[name="activity_intro"]')).sendKeys('测试活动内容');
+
+    // 申请按钮
+    await driver.findElement(By.css('#personnelChanges > div.form-actions > button')).click();
+
+    // 弹窗
     await driver.wait(until.alertIsPresent());
-
-    // siwtch to alert window
-    // and accept it
     await driver.switchTo().alert().accept();
-
-    // switch bach to main window
     await driver.switchTo().defaultContent();
 
     // we are logged in

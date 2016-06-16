@@ -55,8 +55,14 @@ import homeListDepartment from './spec/homeListDepartment';
 >>>>>>> fix bugs
 =======
 // import homeListDepartment from './spec/homeListDepartment';
+<<<<<<< 7ebdd8b644a763be94b907d2407f1da6d6b04a86
 import checkDepartmentRecord from './spec/checkDepartmentRecord';
 >>>>>>> 完成2.3.2/2.4.1/2.4.2
+=======
+// import checkDepartmentRecord from './spec/checkDepartmentRecord';
+// import managePerson from './spec/managePerson';
+import applyActivity from './spec/applyActivity';
+>>>>>>> 完成2.15和2.16
 
 /**
  * what test runs
@@ -95,8 +101,14 @@ const suites = [
 >>>>>>> fix bugs
 =======
   // homeListDepartment,
+<<<<<<< 7ebdd8b644a763be94b907d2407f1da6d6b04a86
   checkDepartmentRecord,
 >>>>>>> 完成2.3.2/2.4.1/2.4.2
+=======
+  // checkDepartmentRecord,
+  // managePerson,
+  applyActivity,
+>>>>>>> 完成2.15和2.16
 ];
 
 /**
