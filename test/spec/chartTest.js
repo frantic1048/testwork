@@ -22,7 +22,8 @@ describe('chartTest', () => {
     const adAnalysis = '#sidebar>ul>li:nth-child(4)>';
     await driver.findElement(By.css(adAnalysis.concat('a[href="#"]'))).click();
     await driver.findElement(
-      By.css(adAnalysis.concat('ul>li:nth-child(1) a[href="/anli/ad_analysis_compare.php"]'))).click();
+      By.css(adAnalysis.concat('ul>li:nth-child(1) a[href="/anli/ad_analysis_compare.php"]')))
+      .click();
 
     expect(await driver.getCurrentUrl()).to.equal(`${baseURL}/ad_analysis_compare.php`);
     saveShot(
@@ -30,7 +31,8 @@ describe('chartTest', () => {
 
     // jump to ad_analysis_trend1
     await driver.findElement(
-      By.css(adAnalysis.concat('ul>li:nth-child(2) a[href="/anli/ad_analysis_trend1.php"]'))).click();
+      By.css(adAnalysis.concat('ul>li:nth-child(2) a[href="/anli/ad_analysis_trend1.php"]')))
+      .click();
 
     expect(await driver.getCurrentUrl()).to.equal(`${baseURL}/ad_analysis_trend1.php`);
     saveShot(await driver.takeScreenshot(), `${meta.platform}.${meta.target}.ad_analysis_trend1`);
