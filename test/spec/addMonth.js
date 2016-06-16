@@ -6,7 +6,7 @@ chai.use(chaiAsPromised);
 
 export default (driver, baseURL) =>
 describe('View - Inform', () => {
-  it('View - Inform', async => {
+  it('View - Inform', async () => {
     await driver.get(`${baseURL}/`);
     expect(await driver.getTitle()).to.eventually.equal('人力资源管理系统');
     await driver.findElement(By.css('input[name="name"]')).sendKeys('admin');

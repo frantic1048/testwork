@@ -4,7 +4,7 @@ import { By, until } from 'selenium-webdriver';
 
 export default (driver, baseURL) =>
 describe('Add - Inform', () => {
-  it('Add - Inform', async => {
+  it('Add - Inform', async () => {
     await driver.get(`${baseURL}/`);
     expect(await driver.getTitle()).to.eventually.equal('人力资源管理系统');
 
