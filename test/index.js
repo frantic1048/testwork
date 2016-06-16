@@ -32,6 +32,9 @@ import simpleGet from './spec/simpleGet';
 import loginLogout from './spec/loginLogout';
 import reportForm from './spec/reportForm';
 
+import chartTest from './spec/chartTest';
+import activity from './spec/activity';
+
 import viewInform from './spec/viewInform';// by wjh
 import addInform from './spec/addInform';// by wjh
 import deleteInform from './spec/deleteInform';// by wjh
@@ -48,7 +51,6 @@ import checkDepartmentRecord from './spec/checkDepartmentRecord';
 import applyActivity from './spec/applyActivity';
 import managePerson from './spec/managePerson';
 
-
 /**
  * what test runs
  * @type {Array}
@@ -56,6 +58,8 @@ import managePerson from './spec/managePerson';
 const suites = [
   simpleGet,
   loginLogout,
+  chartTest,
+  activity,
   reportForm,
   viewInform, // by wjh
   addInform, // by wjh
