@@ -38,8 +38,8 @@ describe('activity', () => {
     await driver.switchTo().defaultContent();
     await driver.wait(until.elementLocated(By.css('#user-nav>ul>li> a[href="#"]')), 5000);
     expect(await driver.getCurrentUrl()).to.equal(`${baseURL}/activity_apply.php`);
-    
-    //invalid input
+
+    // invalid input
     await driver.wait(until.elementLocated(By.css(buttonApply)), 3000).click();
     expect(await driver.getCurrentUrl()).to.equal(`${baseURL}/activity_add.php`);
     await driver.findElement(By.css('input[name="activity_name"]')).sendKeys('overflow');
@@ -53,7 +53,7 @@ describe('activity', () => {
     await driver.switchTo().defaultContent();
     await driver.wait(until.elementLocated(By.css('#user-nav>ul>li> a[href="#"]')), 5000);
     expect(await driver.getCurrentUrl()).to.equal(`${baseURL}/activity_apply.php`);
-    
+
     await driver.wait(until.elementLocated(By.css(buttonApply)), 3000).click();
     expect(await driver.getCurrentUrl()).to.equal(`${baseURL}/activity_add.php`);
     await driver.findElement(By.css('input[name="activity_name"]')).sendKeys('</html><!--');
@@ -68,7 +68,8 @@ describe('activity', () => {
 
     // logout
     await driver.get(`${baseURL}/user_home.php`);
-    await driver.findElement(By.css('#user-nav>ul>li:nth-child(2) a[href="/anli/logout.php"]')).click();
+    await driver.findElement(
+      By.css('#user-nav>ul>li:nth-child(2) a[href="/anli/logout.php"]')).click();
     await driver.wait(until.alertIsPresent());
     await driver.switchTo().alert().accept();
     await driver.switchTo().defaultContent();
@@ -88,15 +89,16 @@ describe('activity', () => {
 
     await driver.wait(until.elementLocated(By.css('#user-nav>ul>li> a[href="#"]')), 3000);
     expect(await driver.getCurrentUrl()).to.equal(`${baseURL}/ad_home.php`);
-    
+
     // jump to ad_approve
-    await driver.findElement(By.css('#sidebar>ul>li:nth-child(5)> a[href="/anli/ad_approve.php"]')).click();
+    await driver.findElement(
+      By.css('#sidebar>ul>li:nth-child(5)> a[href="/anli/ad_approve.php"]')).click();
 
     // push all button
     await driver.wait(until.elementLocated(By.css(buttonPass)), 5000);
-    const elements_src = await driver.findElements(By.css(buttonPass));
-    expect(elements_src.length).to.equal(1);
-    elements_src.forEach(async element => {
+    const elementsSrc = await driver.findElements(By.css(buttonPass));
+    expect(elementsSrc.length).to.equal(1);
+    elementsSrc.forEach(async element => {
       await element.click();
       await driver.wait(until.alertIsPresent());
       await driver.switchTo().alert().accept();
@@ -106,17 +108,15 @@ describe('activity', () => {
     });
 
     // check if all done
-    const elements_dst = await driver.findElements(buttonPass);
-    expect(elements_dst.length).to.equal(0);
+    const elementsDst = await driver.findElements(buttonPass);
+    expect(elementsDst.length).to.equal(0);
 
     // logout
     await driver.get(`${baseURL}/ad_home.php`);
-    await driver.findElement(By.css('#user-nav>ul>li:nth-child(2) a[href="/anli/logout.php"]')).click();
+    await driver.findElement(
+      By.css('#user-nav>ul>li:nth-child(2) a[href="/anli/logout.php"]')).click();
     await driver.wait(until.alertIsPresent());
     await driver.switchTo().alert().accept();
     await driver.switchTo().defaultContent();
   });
-
 });
-
-
