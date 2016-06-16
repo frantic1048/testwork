@@ -54,7 +54,8 @@ describe('Edit - User', () => {
     expect(await driver.getCurrentUrl())
         .to.equal(`${baseURL}/ad_usermanager.php`);
 
-    await driver.findElement(By.css('#user-nav>ul>li:nth-child(2) a[href="/anli/logout.php"]')).click();
+    await driver.findElement(By.css('#user-nav>ul>li:nth-child(2)'+
+      ' a[href="/anli/logout.php"]')).click();
     await driver.wait(until.alertIsPresent());
     await driver.switchTo().alert().accept();
     await driver.switchTo().defaultContent();

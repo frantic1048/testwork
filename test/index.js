@@ -57,8 +57,7 @@ const suites = [
   editUser, // by wjh
   deleteUser, // by wjh
   viewMonth, // by wjh
-  addMonth, //by wjh
-
+  addMonth, // by wjh
 ];
 
 /**
