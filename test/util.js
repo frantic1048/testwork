@@ -1,5 +1,3 @@
-// driver.takeScreenshot()
-
 import fs from 'fs';
 import { Buffer } from 'buffer';
 

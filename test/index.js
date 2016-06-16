@@ -69,7 +69,7 @@ for (const [target, browser] of targets[platform]) {
       else done();
     });
     if (driver) {
-      suites.forEach(s => s.call(this, driver, baseURL));
+      suites.forEach(s => s(driver, baseURL, { target, platform }));
       after(() => driver.quit());
     }
   });
