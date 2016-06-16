@@ -1,7 +1,7 @@
 import { it, describe } from 'selenium-webdriver/testing';
 import { expect } from 'chai';
 import { By, until } from 'selenium-webdriver';
-import { saveShot } from '../util'
+import { saveShot } from '../util';
 
 export default (driver, baseURL, meta) =>
 describe('chartTest', () => {
@@ -19,21 +19,24 @@ describe('chartTest', () => {
     expect(await driver.getCurrentUrl()).to.equal(`${baseURL}/ad_home.php`);
 
     // jump to ad_analysis_compare
-    var ad_analysis = '#sidebar>ul>li:nth-child(4)>';
+    const ad_analysis = '#sidebar>ul>li:nth-child(4)>';
     await driver.findElement(By.css(ad_analysis + 'a[href="#"]')).click();
-    await driver.findElement(By.css(ad_analysis + 'ul>li:nth-child(1) a[href="/anli/ad_analysis_compare.php"]')).click();
+    await driver.findElement(
+      By.css(ad_analysis + 'ul>li:nth-child(1) a[href="/anli/ad_analysis_compare.php"]')).click();
 
     expect(await driver.getCurrentUrl()).to.equal(`${baseURL}/ad_analysis_compare.php`);
-    saveShot(await driver.takeScreenshot(), `${meta.platform}.${meta.target}.ad_analysis_compare`);
+    saveShot(await driver.takeScreenshot(),`${meta.platform}.${meta.target}.ad_analysis_compare`);
 
     // jump to ad_analysis_trend1
-    await driver.findElement(By.css(ad_analysis + 'ul>li:nth-child(2) a[href="/anli/ad_analysis_trend1.php"]')).click();
+    await driver.findElement(
+      By.css(ad_analysis + 'ul>li:nth-child(2) a[href="/anli/ad_analysis_trend1.php"]')).click();
 
     expect(await driver.getCurrentUrl()).to.equal(`${baseURL}/ad_analysis_trend1.php`);
     saveShot(await driver.takeScreenshot(), `${meta.platform}.${meta.target}.ad_analysis_trend1`);
 
     // logout
-    await driver.findElement(By.css('#user-nav>ul>li:nth-child(2) a[href="/anli/logout.php"]')).click();
+    await driver.findElement(
+      By.css('#user-nav>ul>li:nth-child(2) a[href="/anli/logout.php"]')).click();
 
     // wait alert shows
     await driver.wait(until.alertIsPresent());
@@ -41,5 +44,3 @@ describe('chartTest', () => {
     await driver.switchTo().defaultContent();
   });
 });
-
-
