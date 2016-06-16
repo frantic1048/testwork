@@ -30,7 +30,7 @@ const targets = {
 */
 import simpleGet from './spec/simpleGet';
 import loginLogout from './spec/loginLogout';
-
+import reportForm from './spec/reportForm';
 
 import viewInform from './spec/viewInform';// by wjh
 import addInform from './spec/addInform';// by wjh
@@ -49,6 +49,7 @@ import addMonth from './spec/addMonth';// by wjh
 const suites = [
   simpleGet,
   loginLogout,
+  reportForm,
   viewInform, // by wjh
   addInform, // by wjh
   deleteInform, // by wjh
