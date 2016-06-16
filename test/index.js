@@ -30,6 +30,9 @@ const targets = {
 */
 import simpleGet from './spec/simpleGet';
 import loginLogout from './spec/loginLogout';
+import chartTest from './spec/chartTest';
+import activity from './spec/activity';
+
 
 /**
  * what test runs
@@ -38,6 +41,8 @@ import loginLogout from './spec/loginLogout';
 const suites = [
   simpleGet,
   loginLogout,
+  chartTest,
+  activity,
 ];
 
 /**
