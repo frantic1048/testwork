@@ -4,7 +4,7 @@ import { By, until } from 'selenium-webdriver';
 
 export default (driver, baseURL) =>
 describe('View - User', () => {
-  it('View - User', async => {
+  it('View - User', async () => {
     await driver.get(`${baseURL}/`);
     expect(await driver.getTitle()).to.eventually.equal('人力资源管理系统');
     await driver.findElement(By.css('input[name="name"]')).sendKeys('admin');
