@@ -5,7 +5,7 @@ import { By, until } from 'selenium-webdriver';
 export default (driver, baseURL) =>
 describe('activity', () => {
   it('apply', async () => {
-    const var buttonApply = '#content a[href="/anli/activity_add.php"]';
+    const buttonApply = '#content a[href="/anli/activity_add.php"]';
 
     await driver.get(`${baseURL}/`);
     await driver.wait(until.elementLocated(By.css('input[name="name"]')), 8000);
@@ -75,8 +75,8 @@ describe('activity', () => {
   });
 
   it('review', async () => {
-    const var buttonPass = 'button.btn.btn-success.btn-mini';
-    
+    const buttonPass = 'button.btn.btn-success.btn-mini';
+
     await driver.get(`${baseURL}/`);
     await driver.wait(until.elementLocated(By.css('input[name="name"]')), 8000);
     expect(await driver.getCurrentUrl()).to.equal(`${baseURL}/login_page.php`);
