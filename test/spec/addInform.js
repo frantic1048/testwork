@@ -14,7 +14,7 @@ describe('Add - Inform', () => {
 
     await driver.findElement(By.css('input[type="submit"]')).click();
 
-    (await driver.getTitle()).to.equal('企业信息管理系统');
+    expect(await driver.getTitle()).to.equal('企业信息管理系统');
     expect(await driver.getCurrentUrl())
         .to.equal(`${baseURL}/ad_home.php`);
 
