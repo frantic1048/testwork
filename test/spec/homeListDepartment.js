@@ -71,6 +71,11 @@ describe('Home List-Department', () => {
     expect(await elem5.getText()).to.equal('活动申报');
     await driver.findElement(By.css('#breadcrumb > a.tip-bottom')).click();
 
+    // 通知检查
+    const elem6 = driver.findElement(By.css('#content > div.container-fluid >'
+      + ' div.container-fluid > div > div > div > div.widget-title > h5'));
+    expect(await elem6.getText()).to.equal('通知');
+
     // we are logged in
     // click the logout button
     await driver.findElement(By.css('#user-nav>ul>li:nth-child(2) a[href="/anli/logout.php"]'))

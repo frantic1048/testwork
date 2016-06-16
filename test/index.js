@@ -46,12 +46,17 @@ import homeList from './spec/homeList';
 =======
 // import loginLogout from './spec/loginLogout';
 // import homeListAdmin from './spec/homeListAdmin';
+<<<<<<< b3fddd76459c88c13d857d5aa5436ab9bfd871dd
 <<<<<<< b6c600b0aabdbe7afe0cde918d406fbf9ab7b520
 // import homeListDepartment from './spec/homeListDepartment';
 >>>>>>> 完成2.3.1
 =======
 import homeListDepartment from './spec/homeListDepartment';
 >>>>>>> fix bugs
+=======
+// import homeListDepartment from './spec/homeListDepartment';
+import checkDepartmentRecord from './spec/checkDepartmentRecord';
+>>>>>>> 完成2.3.2/2.4.1/2.4.2
 
 /**
  * what test runs
@@ -81,12 +86,17 @@ const suites = [
   simpleGet,
   // loginLogout,
   // homeListAdmin,
+<<<<<<< b3fddd76459c88c13d857d5aa5436ab9bfd871dd
 <<<<<<< b6c600b0aabdbe7afe0cde918d406fbf9ab7b520
   // homeListDepartment,
 >>>>>>> 完成2.3.1
 =======
   homeListDepartment,
 >>>>>>> fix bugs
+=======
+  // homeListDepartment,
+  checkDepartmentRecord,
+>>>>>>> 完成2.3.2/2.4.1/2.4.2
 ];
 
 /**
