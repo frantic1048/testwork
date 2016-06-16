@@ -1,7 +1,7 @@
 import { it, describe } from 'selenium-webdriver/testing';
-import { expect       } from 'chai';
-import { By, until    } from 'selenium-webdriver';
-import { saveShot     } from '../util'
+import { expect } from 'chai';
+import { By, until } from 'selenium-webdriver';
+import { saveShot } from '../util'
 
 export default (driver, baseURL, meta) =>
 describe('chartTest', () => {
