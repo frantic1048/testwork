@@ -18,34 +18,24 @@ describe('fillMonthPersonnel', () => {
     // press login button
     await driver.findElement(By.css('input[type="submit"]')).click();
 
-    //点击月表填报
-    await driver.findElement(By.css('#sidebar > ul > li.submenu.open > a')).click();
-
-    //点击人事汇报
-    await driver.findElement(By.css('#sidebar > ul > li.submenu.open > ul > li:nth-child(2) > a')).click();
-
-    await driver.findElement(By.css('input[name="staff_number"]')).sendKeys('3');
-    await driver.findElement(By.css('input[type="submit"]')).click();
-
-    //查看是否成功
-    await driver.findElement(By.css('#sidebar > ul > li:nth-child(5) > a > span')).click();
+    // 点击
+    await driver.findElement(By.css('#content > div.container-fluid >'
+        +' div.quick-actions_homepage > ul > li.bg_lo > a')).click();
 
     const elem0 = driver.findElement(By.css('#breadcrumb > a.current'));
-    expect(await elem0.getText()).to.equal('月报查询');
+    expect(await elem0.getText()).to.equal('人事汇报');
 
-    //click search button
-    await driver.findElement(By.css('#content > div.container-fluid > div > div >'
-      +' div > div.widget-content.nopadding > table > tbody >'
-      +' tr:nth-child(1) > td:nth-child(3)')).click();
+    // await driver.findElement(By.css('input[name="staff_number"]')).sendKeys('3');
+    // await driver.findElement(By.css('#personnelChanges > div.form-actions > button')).click();
 
-    //check search
-    const elem1 = driver.findElement(By.css('#content > div.container-fluid >'
-      +' div > div.span8 > div > div.widget-content > table > tbody > tr > td:nth-child(1)'));
-    expect(await elem1.getText()).to.equal('3');
+    // // 弹窗
+    // await driver.wait(until.alertIsPresent());
+    // await driver.switchTo().alert().accept();
+    // await driver.switchTo().defaultContent();
 
     // we are logged in
     // click the logout button
-     await driver.findElement(By.css('#user-nav>ul>li:nth-child(2) a[href="/anli/logout.php"]'))
+    await driver.findElement(By.css('#user-nav>ul>li:nth-child(2) a[href="/anli/logout.php"]'))
       .click();
 
     // wait alert shows

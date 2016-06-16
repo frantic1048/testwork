@@ -6,7 +6,7 @@ export default (driver, baseURL) =>
 describe('checkDepartmentInfo', () => {
   it('checkDepartmentInfo', async () => {
     // open index
-   await driver.get(`${baseURL}/`);
+    await driver.get(`${baseURL}/`);
     // expect(driver.getTitle()).to.eventually.equal('人力资源管理系统');
 
     // input username
@@ -25,7 +25,8 @@ describe('checkDepartmentInfo', () => {
 
     // we are logged in
     // click the logout button
-    await driver.findElement(By.css('#user-nav>ul>li:nth-child(2) a[href="/anli/logout.php"]')).click();
+    await driver.findElement(By.css('#user-nav>ul>li:nth-child(2)'
+      + ' a[href="/anli/logout.php"]')).click();
 
     // wait alert shows
     await driver.wait(until.alertIsPresent());

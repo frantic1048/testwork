@@ -32,24 +32,24 @@ describe('searchMonthData', () => {
     // press login button
     await driver.findElement(By.css('input[type="submit"]')).click();
 
-    await driver.findElement(By.css('#sidebar > ul > li:nth-child(5) > a > span')).click();
+    await driver.findElement(By.css('#sidebar > ul > li:nth-child(5) > a')).click();
 
     const elem0 = driver.findElement(By.css('#breadcrumb > a.current'));
     expect(await elem0.getText()).to.equal('月报查询');
 
-    //click search button
+    // click search button
     await driver.findElement(By.css('#content > div.container-fluid > div > div >'
-      +' div > div.widget-content.nopadding > table > tbody > tr:nth-child(2) '
-      +'> td:nth-child(2) > a > span')).click();
+      + ' div > div.widget-content.nopadding > table > tbody > tr:nth-child(2) '
+      + '> td:nth-child(2) > a > span')).click();
 
-    //check search
+    // check search
     const elem1 = driver.findElement(By.css('#content > div.container-fluid >'
-      +' div > div.span8 > div > div.widget-title > h5'));
+      + ' div > div.span8 > div > div.widget-title > h5'));
     expect(await elem1.getText()).to.equal('绩效考核');
 
     // we are logged in
     // click the logout button
-     await driver.findElement(By.css('#user-nav>ul>li:nth-child(2) a[href="/anli/logout.php"]'))
+    await driver.findElement(By.css('#user-nav>ul>li:nth-child(2) a[href="/anli/logout.php"]'))
       .click();
 
     // wait alert shows
