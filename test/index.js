@@ -13,9 +13,9 @@ const targets = {
     ['Firefox', Browser.FIREFOX],
   ],
   darwin: [ // OS X
-    // ['Chrome', Browser.CHROME],
+    ['Chrome', Browser.CHROME],
     ['Firefox', Browser.FIREFOX],
-    // ['Safari', Browser.SAFARI],
+    ['Safari', Browser.SAFARI],
   ],
   win32: [ // Windows
     ['Chrome', Browser.CHROME],
