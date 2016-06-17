@@ -47,7 +47,10 @@ import addMonth from './spec/addMonth';// by wjh
 
 import homeListAdmin from './spec/homeListAdmin';
 import homeListDepartment from './spec/homeListDepartment';
-import checkDepartmentRecord from './spec/checkDepartmentRecord';
+
+// FIXME
+// import checkDepartmentRecord from './spec/checkDepartmentRecord';
+
 import applyActivity from './spec/applyActivity';
 import managePerson from './spec/managePerson';
 
@@ -80,7 +83,7 @@ const suites = [
 
   homeListAdmin,
   homeListDepartment,
-  checkDepartmentRecord,
+  // checkDepartmentRecord, // FIXME
   managePerson,
   applyActivity,
 
