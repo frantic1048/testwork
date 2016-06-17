@@ -43,18 +43,8 @@ describe('Check Department Record', () => {
     await driver.findElement(By.css('#content > div.container-fluid >'
         + ' div > div > a > button')).click();
     // 导出Excel
-    await driver.findElement(By.css('#content > div.container-fluid >'
-        + ' div > div > div > div.widget-content > a > button')).click();
-
-    // wait alert shows
-    await driver.wait(until.alertIsPresent());
-
-    // siwtch to alert window
-    // and accept it
-    await driver.switchTo().alert().accept();
-
-    // switch bach to main window
-    await driver.switchTo().defaultContent();
+    // await driver.findElement(By.css('#content > div.container-fluid >'
+    //     + ' div > div > div > div.widget-content > a > button')).click();
 
     // we are logged in
     // click the logout button
