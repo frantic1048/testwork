@@ -48,6 +48,10 @@ import checkDepartmentRecord from './spec/checkDepartmentRecord';
 import applyActivity from './spec/applyActivity';
 import managePerson from './spec/managePerson';
 
+import checkDepartmentInfo from './spec/checkDepartmentInfo';
+import searchMonthData from './spec/searchMonthData';
+import fillMonthPayout from './spec/fillMonthPayout';
+import fillMonthPersonnel from './spec/fillMonthPersonnel';
 
 /**
  * what test runs
@@ -71,6 +75,10 @@ const suites = [
   checkDepartmentRecord,
   managePerson,
   applyActivity,
+  checkDepartmentInfo,
+  searchMonthData,
+  fillMonthPayout,
+  fillMonthPersonnel,
 ];
 
 /**
