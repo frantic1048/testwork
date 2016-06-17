@@ -3,22 +3,8 @@ import { expect } from 'chai';
 import { By, until } from 'selenium-webdriver';
 
 export default (driver, baseURL) =>
-<<<<<<< 904a2aa56b53347adce26aa57f46562097eeaa45
-<<<<<<< 9302e24c85ddb8b7d31196adad9bc67da8c135c4
 describe('searchMonthData', () => {
-<<<<<<< 98038c8819162ae03cd6877f60be34f2afb9cc8f
-  it('searchMonthData', (done) => {
-=======
-describe('checkDepartmentInfo', () => {
-  it('checkDepartmentInfo', (done) => {
->>>>>>> 【提交测试js】查看部门信息、编辑部门信息、查询月报数据
-=======
-describe('searchMonthData', () => {
-  it('searchMonthData', (done) => {
->>>>>>> 【提交测试js】填报月报人事、填报月报绩效
-=======
   it('searchMonthData', async () => {
->>>>>>> 【提交测试js】修正语法问题
     // open index
     await driver.get(`${baseURL}/`);
     // expect(driver.getTitle()).to.eventually.equal('人力资源管理系统');
