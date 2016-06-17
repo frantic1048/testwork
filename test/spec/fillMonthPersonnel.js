@@ -20,7 +20,7 @@ describe('fillMonthPersonnel', () => {
 
     // 点击
     await driver.findElement(By.css('#content > div.container-fluid >'
-        +' div.quick-actions_homepage > ul > li.bg_lo > a')).click();
+        + ' div.quick-actions_homepage > ul > li.bg_lo > a')).click();
 
     const elem0 = driver.findElement(By.css('#breadcrumb > a.current'));
     expect(await elem0.getText()).to.equal('人事汇报');

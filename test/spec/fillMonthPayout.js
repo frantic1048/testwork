@@ -17,10 +17,10 @@ describe('fillMonthPayout', () => {
 
     // press login button
     await driver.findElement(By.css('input[type="submit"]')).click();
-    
+
     // 点击绩效考核
     await driver.findElement(By.css('#content > div.container-fluid >'
-      +' div.quick-actions_homepage > ul > li.bg_ly > a')).click();
+      + ' div.quick-actions_homepage > ul > li.bg_ly > a')).click();
 
     const elem0 = driver.findElement(By.css('#breadcrumb > a.current'));
     expect(await elem0.getText()).to.equal('绩效考核');

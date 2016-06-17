@@ -28,8 +28,6 @@ const targets = {
 /**
 * Testing suites
 */
-<<<<<<< f96c79fbd2eee7a5ed5b8c3bcb52f8e77b827961
-<<<<<<< 9c770fe35391dba2c17aa4b778f2adb3e8727a5f
 import simpleGet from './spec/simpleGet';
 import loginLogout from './spec/loginLogout';
 import reportForm from './spec/reportForm';
@@ -50,30 +48,16 @@ import checkDepartmentRecord from './spec/checkDepartmentRecord';
 import applyActivity from './spec/applyActivity';
 import managePerson from './spec/managePerson';
 
-=======
-// import simpleGet from './spec/simpleGet';
-// import loginLogout from './spec/loginLogout';
-// import checkDepartmentInfo from './spec/checkDepartmentInfo';
-// import searchMonthData from './spec/searchMonthData';
-// import fillMonthPayout from './spec/fillMonthPayout';
-// import fillMonthPersonnel from './spec/fillMonthPersonnel';
->>>>>>> fix bugs
-=======
-import simpleGet from './spec/simpleGet';
-import loginLogout from './spec/loginLogout';
 import checkDepartmentInfo from './spec/checkDepartmentInfo';
 import searchMonthData from './spec/searchMonthData';
 import fillMonthPayout from './spec/fillMonthPayout';
 import fillMonthPersonnel from './spec/fillMonthPersonnel';
->>>>>>> 移除注释
 
 /**
  * what test runs
  * @type {Array}
  */
 const suites = [
-<<<<<<< f96c79fbd2eee7a5ed5b8c3bcb52f8e77b827961
-<<<<<<< 9c770fe35391dba2c17aa4b778f2adb3e8727a5f
   simpleGet,
   loginLogout,
   reportForm,
@@ -91,22 +75,10 @@ const suites = [
   checkDepartmentRecord,
   managePerson,
   applyActivity,
-=======
-  // simpleGet,
-  // loginLogout,
-  // checkDepartmentInfo,
-  // searchMonthData,
-  // fillMonthPayout,
-  // fillMonthPersonnel,
->>>>>>> fix bugs
-=======
-  simpleGet,
-  loginLogout,
   checkDepartmentInfo,
   searchMonthData,
   fillMonthPayout,
   fillMonthPersonnel,
->>>>>>> 移除注释
 ];
 
 /**
